@@ -16,7 +16,7 @@ NOTE: you'll see `users=user1:password,user2:password` with these examples. For 
 1. Create a .env file:
 ```
 #!/bin/bash
-export users=JBlow=JoePass;SusieQ=SuePass
+export users=JBlow:JoePass,SusieQ:SuePass
 ```
 Note: you'll likely want to come back and adjust this file.
 2. Open terminal #1, change directory to this one, and then source that .env to get the envvars: `source .env`
