@@ -19,6 +19,7 @@ NOTE: you'll see `users=user1:password,user2:password` with these examples. For 
 export users=JBlow:JoePass,SusieQ:SuePass
 ```
 Note: you'll likely want to come back and adjust this file.
+
 2. Open terminal #1, change directory to this one, and then source that .env to get the envvars: `source .env`
 3. Docker: `make run`. Skip the `users` if you leverage a .env file.
 4. Open terminal #2, get New Private Key from the `/generateKey` endpoint:
@@ -35,13 +36,13 @@ export users=JBlow:JoePass,SusieQ:SuePass
 export LNURL=lightning:LNURL1DP68GURN8GHJ7E3JXUEJ6V3KXQCJ6CE595URZVPS956XVWFS95UNSVFE95UN2VF595EKZWRZ94JRSE3N9EHXWUN0DVKKVUN9V5HXZURS9AKX7EMFDCLKKVFAVV6R2D3SVGMR2VR9V33NXEP4XF3RYCFEXAJRXWRRVC6XYWP4XCCNWVNXX43NXV3NXUERSVFSXV6KGV3KXESNVC3NXSUNXVFS8QURGE3XW3SKW0TVDANKJMS75VZPQ
 export PRIVATE_KEY=7ccca75d019dbae79ac4266501578684ee64eeb3c9212105f7a3bdc0ddb0f27e
 ```
-5. Using second terminal, re-source your .env (`source .env`) to get the changes.
-6. Curl the authenticate endpoint for your flask app:
+8. Using second terminal, re-source your .env (`source .env`) to get the changes.
+9. Curl the authenticate endpoint for your flask app:
 ```
 curl -u SusieQ:SuePass -X POST -H "Content-Type: application/json" http://127.0.0.1:8511/authenticate -d '{"LNURL":"'$LNURL'","key":"'$PRIVATE_KEY'"}'
 ```
-6. Copy the returned URL, and paste into a new tab in your browser, and press enter. If you get a 200, with "OK" in the return, you have successfully logged in.
-7. Your public key (tied to the privateKey injected to the endpoint) is now registered on the site.
+10. Copy the returned URL, and paste into a new tab in your browser, and press enter. If you get a 200, with "OK" in the return, you have successfully logged in.
+11. Your public key (tied to the privateKey injected to the endpoint) is now registered on the site.
 
 ### Run locally
 1. Clone repo into a new directory.
